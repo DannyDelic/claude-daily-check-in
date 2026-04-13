@@ -1,11 +1,11 @@
 name: Claude Code Session Reset Scheduler
 
-# Claude Code Session Reset Scheduler - Configured for GMT+9 timezone
-# Trigger at 14:00 GMT+9 (05:00 UTC) -> Session resets at 19:00 GMT+9
+# Claude Code Session Reset Scheduler - Configured for KST (GMT+9)
+# Cron scheduled at 12:23 KST (03:23 UTC), biased 2h earlier because GitHub Actions
+# consistently delays scheduled workflows 1-2h. Actual fire lands ~14:00 KST.
 on:
   schedule:
-    # 14:00 GMT+9 = 05:00 UTC, using :23 minutes to avoid GitHub Actions congestion
-    - cron: '23 5 * * *'
+    - cron: '23 3 * * *'
   # Manual trigger for testing
   workflow_dispatch:
 
