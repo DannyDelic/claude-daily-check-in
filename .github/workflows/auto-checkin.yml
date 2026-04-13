@@ -54,7 +54,7 @@ jobs:
             1+1=? # Answer should be 2. Do not answer anything else.
       - name: Log Q&A Check (Token 1)
         run: |
-          uv run --python 3.13 python src/log_qa_check.py --token "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_1 }}"
+          uv run --python 3.13 python src/log_qa_check.py --token TOKEN_1
 
       - name: Execute Session Reset Logic (Token 2)
         uses: anthropics/claude-code-action@beta
@@ -67,7 +67,7 @@ jobs:
             1+1=? # Answer should be 2. Do not answer anything else.
       - name: Log Q&A Check (Token 2)
         run: |
-          uv run --python 3.13 python src/log_qa_check.py --token "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN_2 }}"
+          uv run --python 3.13 python src/log_qa_check.py --token TOKEN_2
             
       - name: Commit and Push changes
         run: |
